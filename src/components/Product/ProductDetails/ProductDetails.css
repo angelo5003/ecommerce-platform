@@ -1,0 +1,106 @@
+@media screen and (max-width: 375px) {
+  .product_details_container {
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  #product_brand {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: hsl(26, 100%, 55%);
+  }
+
+  #product_name {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 700;
+  }
+
+  #product_detail_info {
+    color: hsl(219, 9%, 45%);
+  }
+
+  .product_price_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding-top: 12px;
+  }
+
+  #product_price {
+    font-weight: 700;
+    font-size: 25px;
+  }
+
+  #product_discount {
+    color: hsl(26, 100%, 55%);
+    background-color: hsl(25, 100%, 94%);
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  #product_old_price {
+    color: hsl(220, 14%, 75%);
+    text-decoration: line-through;
+    font-weight: 400;
+  }
+
+  .product_outer_btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .product_inner_btn_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hsl(223, 64%, 98%);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 230px; /*justify-content:space-between only works when the container has enough space to distribute between its child elements, like the btn and the span */
+  }
+
+  .product_btn {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+  }
+
+  #product_amount {
+    font-weight: 700;
+  }
+
+  #product_add_item {
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: hsl(26, 100%, 55%);
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+  }
+
+  #product_cart_icon {
+    font-size: 15px;
+    position: absolute;
+    left: 60px;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .product_details_container {
+    display: none;
+  }
+}

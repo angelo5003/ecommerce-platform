@@ -1,0 +1,6 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+  position: relative; /* the default position of all parent elements is relative. This is to prevent that other elements with different positioning will overlap each-other  */
+}
