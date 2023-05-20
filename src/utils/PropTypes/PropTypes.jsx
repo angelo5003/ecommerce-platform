@@ -5,3 +5,14 @@ import PropTypes from "prop-types";
 export const SideBarPropTypes = {
   handleSideBar: PropTypes.func.isRequired,
 };
+export const handleIncrementPropTypes = {
+  handleIncrement: PropTypes.func.isRequired,
+};
+
+export const handleDecrementPropTypes = {
+  handleDecrement: PropTypes.func.isRequired,
+};
+
+export const handleAddItemPropTypes = {
+  handleAddItem: PropTypes.func.isRequired,
+};

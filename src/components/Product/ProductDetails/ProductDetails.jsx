@@ -3,8 +3,19 @@ import minusIcon from "../../../assets/images/icon-minus.svg";
 import plusIcon from "../../../assets/images/icon-plus.svg";
 import { BsCart3 } from "react-icons/bs";
 import product from "../../../data/productData";
+import {
+  handleIncrementPropTypes,
+  handleDecrementPropTypes,
+  handleAddItemPropTypes,
+} from "../../../utils/PropTypes/PropTypes";
 
-const ProductDetails = () => {
+const ProductDetails = ({
+  handleIncrement,
+  counter,
+  handleDecrement,
+  handleAddItem,
+  shoppingCartArray,
+}) => {
   return (
     <article className="product_details_container">
       <header className="product_info_container">
@@ -22,22 +33,32 @@ const ProductDetails = () => {
 
       <div className="product_outer_btn_container">
         <div className="product_inner_btn_container">
-          <button className="product_btn">
+          <button
+            className="product_btn"
+            onClick={() => handleDecrement(shoppingCartArray[0].id)}
+          >
             <img src={minusIcon} alt="decrement-icon" />
           </button>
-          <span id="product_amount">0</span>
-          <button className="product_btn">
+
+          <span id="product_amount">{counter}</span>
+          <button className="product_btn" onClick={handleIncrement}>
             {" "}
             <img src={plusIcon} alt="increment-icon" />
           </button>
         </div>
-        <button id="product_add_item">
-          {" "}
-          <BsCart3 id="product_cart_icon" /> Add to cart
-        </button>
+        {counter > 0 && (
+          <button id="product_add_item" onClick={handleAddItem}>
+            {" "}
+            <BsCart3 id="product_cart_icon" /> Add to cart
+          </button>
+        )}
       </div>
     </article>
   );
 };
+
+ProductDetails.propTypes = handleIncrementPropTypes;
+ProductDetails.propTypes = handleDecrementPropTypes;
+ProductDetails.propTypes = handleAddItemPropTypes;
 
 export default ProductDetails;

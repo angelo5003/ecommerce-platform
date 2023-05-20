@@ -9,7 +9,6 @@ const Navbar = () => {
   const [sideBar, setSideBar] = useState(false);
 
   const handleSideBar = () => {
-    console.log(`I clicked on the mobile btn`);
     setSideBar(!sideBar);
   };
   return (
