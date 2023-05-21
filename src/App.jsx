@@ -8,11 +8,13 @@ import ProductDetails from "./components/Product/ProductDetails/ProductDetails";
 function App() {
   const [counter, setCounter] = useState(0);
   const [shoppingCartArray, setShoppingCartArray] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   // object that store the data we would like to add to the array
   const shoeData = {
     productName: "Fall Limited Edition Sneakers",
     price: 125.0,
+    productPhoto: "/assets/images/image-product-1-thumbnail.jpg",
   };
 
   const handleIncrement = () => {
@@ -38,8 +40,11 @@ function App() {
           id: uuid(),
           productName: shoeData.productName,
           price: shoeData.price,
+          productPhoto: shoeData.productPhoto,
         },
       ]);
+
+      // handleShowModal();
     } else {
       return;
     }
@@ -51,12 +56,22 @@ function App() {
     setShoppingCartArray(deleted);
   };
 
+  const handleShowModal = () => {
+    console.log(`you clicked on the modal btn`);
+    setShowModal(!showModal);
+  };
+
   console.log(`shoppingCartArray:`, shoppingCartArray);
 
   return (
     <>
-      <Navbar />
-      <HeroSection />
+      <Navbar handleShowModal={handleShowModal} counter={counter} />
+      <HeroSection
+        showModal={showModal}
+        handleShowModal={handleShowModal}
+        shoppingCartArray={shoppingCartArray}
+        counter={counter}
+      />
       <ProductDetails
         handleIncrement={handleIncrement}
         counter={counter}

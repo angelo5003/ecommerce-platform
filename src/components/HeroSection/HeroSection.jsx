@@ -3,7 +3,16 @@ import "./HeroSection.css";
 import prevIcon from "../../assets/images/icon-previous.svg";
 import nextIcon from "../../assets/images/icon-next.svg";
 import imgData from "../../data/images.json";
-const HeroSection = () => {
+import Modal from "../Modal/Modal";
+import { handleShowModalPropTypes } from "../../utils/PropTypes/PropTypes";
+
+const HeroSection = ({
+  showModal,
+  handleShowModal,
+  shoppingCartArray,
+
+  counter,
+}) => {
   // 0,represents the index of the first image in the imgData array.
   const [index, setIndex] = useState(0);
 
@@ -35,8 +44,17 @@ const HeroSection = () => {
           <img src={nextIcon} alt="next-icon" />
         </button>
       </div>
+      {showModal ? (
+        <Modal
+          showModal={showModal}
+          handleShowModal={handleShowModal}
+          shoppingCartArray={shoppingCartArray}
+          counter={counter}
+        />
+      ) : null}
     </section>
   );
 };
 
+HeroSection.propTypes = handleShowModalPropTypes;
 export default HeroSection;

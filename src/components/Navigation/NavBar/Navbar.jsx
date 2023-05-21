@@ -4,8 +4,12 @@ import Sidebar from "../SideBar/Sidebar";
 import mobileMenu from "../../../assets/images/icon-menu.svg";
 import shoppingCart from "../../../assets/images/icon-cart.svg";
 import profileImg from "../../../assets/images/image-avatar.png";
+import {
+  handleShowModalPropTypes,
+  showModalPropTypesFunc,
+} from "../../../utils/PropTypes/PropTypes";
 
-const Navbar = () => {
+const Navbar = ({ handleShowModal, counter }) => {
   const [sideBar, setSideBar] = useState(false);
 
   const handleSideBar = () => {
@@ -33,10 +37,12 @@ const Navbar = () => {
             <h2 className="mobile_menu_title">sneakers</h2>
           </li>
           <li className="menu_items">
-            <button className="mobile_menu_btn">
+            <button className="mobile_menu_btn" onClick={handleShowModal}>
               <img src={shoppingCart} alt="shopping-cart" />
             </button>
-            {/* <p>{counter}</p> */}
+            {counter ? (
+              <p className="shopping_cart_total_nav">{counter}</p>
+            ) : null}
           </li>
           <li className="menu_items">
             <img src={profileImg} alt="profile-pic" className="avatar_img" />
@@ -47,4 +53,6 @@ const Navbar = () => {
   );
 };
 
+Navbar.propTypes = handleShowModalPropTypes;
+Navbar.propTypes = showModalPropTypesFunc;
 export default Navbar;

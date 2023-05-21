@@ -16,3 +16,15 @@ export const handleDecrementPropTypes = {
 export const handleAddItemPropTypes = {
   handleAddItem: PropTypes.func.isRequired,
 };
+
+export const handleShowModalPropTypes = {
+  showModal: PropTypes.bool.isRequired,
+};
+
+export const showModalPropTypesFunc = {
+  handleShowModal: PropTypes.func.isRequired,
+};
+
+export const shoppingCartArrayPropTypes = {
+  shoppingCartArray: PropTypes.array.isRequired,
+};

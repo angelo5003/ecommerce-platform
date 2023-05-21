@@ -1,0 +1,25 @@
+.modal_bg {
+  background-color: hsl(0, 0%, 100%);
+  z-index: 100;
+  top: 100px;
+  position: fixed;
+  margin: 0 auto;
+  width: 350px;
+  height: 250px;
+  border: none;
+  border-radius: 5px;
+}
+
+.cart_product_container {
+  margin-top: 10px;
+}
+
+.cart_title {
+  padding: 12px;
+  border-bottom: 1px solid hsl(220, 14%, 75%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*  */
